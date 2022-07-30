@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microsoft 계정</title>
+    <link rel="stylesheet" href="signStyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="signBox">
+            <img class="logo"
+                src="https://aadcdn.msftauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg">
+            <div id="heading">계정 만들기</div>
+            <!-- id 중복 -->
+            <p class="idErro"></p>
+            <!-- pw 에러 -->
+            <p class="pwError"></p>
+            <form method="post" action="">
+                <div class="form-group">
+                    <label for="idBox">아이디 </label>
+                    <input type="text" id="idBox" placeholder="someone@example.com" autofocus required>
+                </div>
+                <div class="form-group">
+                    <label for="pwBox">비밀번호 </label>
+                    <input type="password" id="pwBox" placeholder="password" requireds>
+                </div>
+                <div class="form-button">
+                    <input type="button" value="뒤로" onclick="history.back(-1)">
+                    <input type="submit" value="다음">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
