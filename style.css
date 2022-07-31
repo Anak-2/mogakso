@@ -18,9 +18,12 @@ body {
 }
 
 #loginBox {
-    justify-content: center;
+    /* 자식 요소를 자기 기준으로 absolute하기 위해 relative 지정 */
+    /* position: relative; */
     width: 350px;
-    height: 250px;
+    min-height: 250px;
+    /* box-sizing: content-box; */
+    overflow: hidden;
     padding: 44px;
     background-color: white;
     box-shadow: 0 2px 6px rgb(0 0 0 / 20%);
@@ -34,7 +37,11 @@ body {
     margin: 15px 0px;
 }
 
-#idBox {
+.idError {
+    display: none;
+}
+
+.inputBox {
     border: none;
     border-bottom: solid 1px #0067B8;
     font-size: 20px;
@@ -43,15 +50,15 @@ body {
     padding: 6px 10px 6px 0px;
 }
 
-#idBox:focus {
+.inputBox:focus {
     outline: none;
 }
 
-#idBox:hover {
+.inputBox:hover {
     border-bottom-color: rgb(0, 0, 0, 6);
 }
 
-#idBox::placeholder {
+.inputBox::placeholder {
     font-size: 18px;
 }
 
@@ -71,6 +78,7 @@ a:hover {
 }
 
 .form-button {
+    padding-top: 20px;
     width: 360px;
     height: 32px;
     padding-left: 138px;

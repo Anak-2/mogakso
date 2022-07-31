@@ -16,13 +16,13 @@
                 src="https://aadcdn.msftauth.net/shared/1.0/content/images/microsoft_logo_ee5c8d9fb6248c938fd0dc19370e90bd.svg">
             <div id="heading">계정 만들기</div>
             <!-- id 중복 -->
-            <p class="idErro"></p>
+            <p class="idError" style="color: red">id 오류 메시지</p>
             <!-- pw 에러 -->
-            <p class="pwError"></p>
-            <form method="post" action="">
+            <p class="pwError" style="color: red">pw 오류 메시지</p>
+            <form id="login" method="post" action="">
                 <div class="form-group">
                     <label for="idBox">아이디 </label>
-                    <input type="text" id="idBox" placeholder="someone@example.com" autofocus required>
+                    <input type="email" id="idBox" placeholder="someone@example.com" autofocus required>
                 </div>
                 <div class="form-group">
                     <label for="pwBox">비밀번호 </label>
@@ -35,6 +35,10 @@
             </form>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"
+        integrity="sha512-VEBjfxWUOyzl0bAwh4gdLEaQyDYPvLrZql3pw1ifgb6fhEvZl9iDDehwHZ+dsMzA0Jfww8Xt7COSZuJ/slxc4Q=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="signup.js"></script>
 </body>
 
 </html>
