@@ -1,16 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To Do</title>
+    <link rel="stylesheet" href="mainpage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
-    <div>
-        MainPage에 온 걸 환영합니다
+    <div id="header">
+        <div class="logo">
+            <button class="menu">
+                <?xml version="1.0" ?><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                    <rect fill="none" height="256" width="256" />
+                    <circle cx="60" cy="60" r="12" />
+                    <circle cx="128" cy="60" r="12" />
+                    <circle cx="196" cy="60" r="12" />
+                    <circle cx="60" cy="128" r="12" />
+                    <circle cx="128" cy="128" r="12" />
+                    <circle cx="196" cy="128" r="12" />
+                    <circle cx="60" cy="196" r="12" />
+                    <circle cx="128" cy="196" r="12" />
+                    <circle cx="196" cy="196" r="12" />
+                </svg>
+            </button>
+            <span>To Do</span>
+        </div>
+        <div class="search">
+            <div class="searchContainer">
+                <i class="fa fa-search searchIcon"></i>
+                <input class="searchBox" type="search" name="search" placeholder="search for...">
+                <input type="submit" value="Search" class="searchButton">
+            </div>
+        </div>
+        <div class="user">
+            <button>사용자</button>
+        </div>
+    </div>
+    <div id="list-container">
+        <div class="list-input">
+            <div class="searchContainer">
+                <input class="searchBox" type="search" name="search" placeholder="add your plan">
+                <input type="submit" value="Add" class="searchButton">
+            </div>
+        </div>
+        <ul class="list"></ul>
     </div>
 </body>
 
