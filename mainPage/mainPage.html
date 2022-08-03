@@ -40,15 +40,28 @@
             <button>사용자</button>
         </div>
     </div>
-    <div id="list-container">
+    <div class="list-input-container">
         <div class="list-input">
-            <div class="searchContainer">
-                <input class="searchBox" type="search" name="search" placeholder="add your plan">
+            <div class="input-container">
+                <input class="inputBox" type="text" name="list-input" placeholder="add your plan...">
                 <input type="submit" value="Add" class="searchButton">
             </div>
         </div>
-        <ul class="list"></ul>
     </div>
+    <div class="list-container">
+        <ul class="list">
+            <div class="list-wrapper">
+                <li class="list-item">1. ToDo</li>
+                <button class="delete-btn">Delete</button>
+            </div>
+            <div class="list-wrapper">
+                <li class="list-item">2. 만들기</li>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="mainpage.js"></script>
 </body>
 
 </html>

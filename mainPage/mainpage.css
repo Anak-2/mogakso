@@ -2,6 +2,12 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
 }
 
 #header {
@@ -20,14 +26,9 @@ button {
     box-sizing: content-box;
 }
 
-#list-container {
-    background-color: beige;
-    display: flex;
-    height: 90vh;
-    justify-content: center;
-}
 
 .searchContainer {
+    /* flex box에 inline-block 속성 */
     display: inline-flex;
     flex: 1 1 300px;
     border: 1px solid #ccc;
@@ -60,4 +61,72 @@ button {
     color: white;
     padding: 0.5rem;
     border-radius: 0;
+}
+
+.list-input-container {
+    /* delete whitespace */
+    font-size: 0px;
+    background-color: beige;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.list-input-container .list-input {
+    width: 40%;
+}
+
+.list-input-container .inputBox {
+    border: 0;
+    width: 80%;
+    height: 40px;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+}
+
+.list-input-container .inputBox:focus {
+    outline: none;
+}
+
+.searchButton {
+    height: 40px;
+}
+
+.list-container {
+    display: flex;
+    padding-top: 30px;
+    background: linear-gradient(to bottom, aqua, rgb(119, 211, 119));
+    justify-content: center;
+    height: 100vh;
+}
+
+.list-container .list {
+    min-width: 300px;
+    background-color: aquamarine;
+    list-style: none;
+    font-size: 1rem;
+}
+
+.list-container .list-wrapper {
+    display: flex;
+    align-content: center;
+}
+
+.list-container .list .list-item {
+    background-color: white;
+    margin-bottom: 10px;
+    width: 80vw;
+    display: inline-block;
+    height: 1.7rem;
+}
+
+.list-container .list .delete-btn {
+    height: 1.7rem;
+    border: 0px;
+}
+
+.list-container .list .delete-btn:hover {
+    border: none;
+    background-color: chartreuse;
 }
