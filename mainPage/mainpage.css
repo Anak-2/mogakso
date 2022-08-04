@@ -121,20 +121,30 @@ button {
 }
 
 .list-container .list .list-item {
+    font-family: 'Roboto', sans-serif;
     background-color: white;
     margin-bottom: 10px;
     width: 80vw;
     display: inline-block;
     height: 1.7rem;
+    padding-left: 2%;
 }
 
-.list-container .list .delete-btn {
+.list-container .list .delete-btn,
+.complete-check {
+    padding: 0 3px;
     height: 1.7rem;
     border: 0px;
 }
 
-.list-container .list .delete-btn:hover {
+.list-container .list .delete-btn:hover,
+.complete-check:hover {
     border: none;
-    background-color: chartreuse;
+    background-color: rgb(179, 255, 37);
     cursor: pointer;
+}
+
+.complete-list {
+    opacity: 0.5;
+    text-decoration: line-through;
 }
