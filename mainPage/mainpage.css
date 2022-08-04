@@ -2,12 +2,10 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-
 }
 
 body {
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 #header {
@@ -55,12 +53,20 @@ button {
     flex: 1;
 }
 
-.searchButton {
+.searchButton,
+.addButton {
     background: #538AC5;
     border: 0;
     color: white;
     padding: 0.5rem;
     border-radius: 0;
+    height: 40px;
+}
+
+.searchButton:hover,
+.addButton:hover {
+    cursor: pointer;
+    background: #385e89;
 }
 
 .list-input-container {
@@ -68,7 +74,7 @@ button {
     font-size: 0px;
     background-color: beige;
     display: flex;
-    width: 100vw;
+    /* width: 100vw; */
     justify-content: center;
     align-content: flex-start;
     flex-wrap: wrap;
@@ -89,21 +95,21 @@ button {
     outline: none;
 }
 
-.searchButton {
-    height: 40px;
+.input-container {
+    display: flex;
+    justify-content: center;
 }
 
 .list-container {
     display: flex;
+    min-height: 100vh;
     padding-top: 30px;
     background: linear-gradient(to bottom, aqua, rgb(119, 211, 119));
     justify-content: center;
-    height: 100vh;
 }
 
 .list-container .list {
     min-width: 300px;
-    background-color: aquamarine;
     list-style: none;
     font-size: 1rem;
 }
@@ -111,6 +117,7 @@ button {
 .list-container .list-wrapper {
     display: flex;
     align-content: center;
+    background-color: aquamarine;
 }
 
 .list-container .list .list-item {
@@ -129,4 +136,5 @@ button {
 .list-container .list .delete-btn:hover {
     border: none;
     background-color: chartreuse;
+    cursor: pointer;
 }
