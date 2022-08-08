@@ -1,12 +1,18 @@
 let inputBox = document.querySelector(".input-container .inputBox");
 let list = document.querySelector(".list");
-
 console.log(inputBox);
 
 //delete one list
 function deleteList(e) {
   // console.dir(e.target);
-  e.target.parentElement.remove();
+  let s = e.target.parentElement;
+  let t1 = new TimelineMax({
+    //remove를 애니메이션 다 끝난 후 호출하기 위한 방법
+    onComplete: function () {
+      s.remove();
+    },
+  });
+  t1.to(s, { duration: 0.5, opacity: 0, y: -50, ease: "line" });
 }
 
 //add key event listencer
@@ -42,14 +48,18 @@ function addList(e) {
 
 function checkList(e) {
   let t = e.target.parentElement;
-  console.dir(t);
-  if (t.classList.contains("complete-list")) {
-    t.classList.remove("complete-list");
+  let t2 = e.target.previousElementSibling;
+  console.dir(t2);
+  if (t2.classList.contains("complete-list")) {
+    t2.classList.remove("complete-list");
+    gsap.to(t, { duration: 1, opacity: 1, ease: "line" });
   } else {
-    t.classList.add("complete-list");
+    t2.classList.add("complete-list");
+    gsap.to(t, { duration: 1, opacity: 0.5, ease: "line" });
   }
 }
 
+//init deleteBtn and checkBtn
 const deleteBtn = document.querySelectorAll(".delete-btn");
 for (let i = 0; i < deleteBtn.length; i++) {
   deleteBtn[i].addEventListener("click", deleteList);

@@ -13,11 +13,27 @@ body {
     background-color: #307bd1;
     height: 10vh;
     align-items: center;
-    padding: 25px;
+    justify-content: space-around;
 }
 
-svg {
-    width: 20px;
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 1000;
+    color: white;
+    font-size: 20px;
+}
+
+.menu {
+    margin-right: 5px;
+}
+
+svg,
+.menu {
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border: none;
 }
 
 button {
@@ -144,7 +160,12 @@ button {
     cursor: pointer;
 }
 
+.list-container .list .delete-btn:hover {
+    border: none;
+    background-color: rgba(234, 95, 95, 0.769);
+    cursor: pointer;
+}
+
 .complete-list {
-    opacity: 0.5;
     text-decoration: line-through;
 }
