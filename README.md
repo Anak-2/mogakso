@@ -6,4 +6,4 @@ Microsoft ToDo clone coding
 
 
 ### mainpage simulation
-<img src="https://github.com/Anak-2/mogakso/issues/2#issue-1331378095](https://user-images.githubusercontent.com/83941092/183350662-0ad5b22c-41f1-4787-810d-a7b3dd23acd8.gif" alt="mainpage simulation gif"
+<img src="https://user-images.githubusercontent.com/83941092/183356069-aba418a8-83cb-4b6a-b820-5954f754314e.gif" alt="mainpage simulation gif">
