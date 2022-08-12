@@ -1,6 +1,16 @@
 let inputBox = document.querySelector(".input-container .inputBox");
+let searchBox = document.querySelector(".searchBox");
 let list = document.querySelector(".list");
-console.log(inputBox);
+searchBox.addEventListener("keyup", function (e) {
+  let listItem = document.querySelectorAll(".list-container .list-item");
+  for (let i = 0; i < listItem.length; i++) {
+    if (listItem[i].innerText.includes(searchBox.value, 0)) {
+      listItem[i].parentElement.style.display = "flex";
+    } else {
+      listItem[i].parentElement.style.display = "none";
+    }
+  }
+});
 
 //delete one list
 function deleteList(e) {
@@ -19,7 +29,34 @@ function deleteList(e) {
 inputBox.addEventListener("keyup", function (e) {
   if (e.keyCode === 13) {
     addList(e);
-    inputBox.value = "";
+  }
+});
+
+inputBox.addEventListener("focus", function (e) {
+  // give shadow to list-inpu document.querySelector(".input-info")t-container
+  inputBox.parentElement.style.boxShadow = "0 2px 6px rgb(0 0 0 / 20%)";
+  const inputInfo = document.querySelector(".input-info");
+  if (inputInfo.classList.contains("input-info-hidden")) {
+    inputInfo.classList.remove("input-info-hidden");
+    inputInfo.classList.add("input-info-visible");
+  }
+});
+
+//when inputBox lost focus (it works but it couldn't handle hiding input-info)
+// inputBox.addEventListener("blur", function (e) {
+//   inputBox.parentElement.style.boxShadow = "none";
+// });
+
+//when click outside the list-input, hide box-shadow and input-info
+document.addEventListener("mouseup", function (e) {
+  let container = document.querySelector(".list-input");
+  const inputInfo = document.querySelector(".input-info");
+  if (!container.contains(e.target)) {
+    if (inputInfo.classList.contains("input-info-visible")) {
+      inputInfo.classList.remove("input-info-visible");
+      inputInfo.classList.add("input-info-hidden");
+    }
+    inputBox.parentElement.style.boxShadow = "none";
   }
 });
 
@@ -43,6 +80,7 @@ function addList(e) {
     deleteBtn.classList.add("delete-btn");
     deleteBtn.innerText = "❌";
     listWrapper.appendChild(deleteBtn);
+    inputBox.value = "";
   }
 }
 
@@ -69,4 +107,53 @@ addBtn.addEventListener("click", addList);
 const checkBtn = document.querySelectorAll(".complete-check");
 for (let i = 0; i < checkBtn.length; i++) {
   checkBtn[i].addEventListener("click", checkList);
+}
+
+//open side menu
+function openSideMenu() {
+  console.log("hi...");
+  const sideMenu = document.querySelector(".side-menu");
+  if (sideMenu.classList.contains("side-menu-hidden")) {
+    sideMenu.classList.remove("side-menu-hidden");
+    sideMenu.classList.add("side-menu-visible");
+  } else {
+    sideMenu.classList.remove("side-menu-visible");
+    sideMenu.classList.add("side-menu-hidden");
+  }
+}
+document.querySelector(".menu").addEventListener("click", openSideMenu);
+
+//make trash-btn function
+function trashCompleted() {
+  let listItem = document.querySelectorAll(".list-container .list-item");
+  for (let i = 0; i < listItem.length; i++) {
+    if (listItem[i].classList.contains("complete-list")) {
+      listItem[i].parentElement.remove();
+    }
+  }
+}
+document.querySelector(".trash-svg").addEventListener("click", announceTrash);
+//make announcement when user clicks trash-btn
+function announceTrash() {
+  trashCompleted();
+}
+
+// change trash svg color when mouseover, mouseout
+document
+  .querySelector(".trash-svg")
+  .addEventListener("mouseover", changeTrashColorIn);
+function changeTrashColorIn() {
+  let trashHover = document.querySelectorAll(".trash-hover");
+  for (let i = 0; i < trashHover.length; i++) {
+    trashHover[i].style.fill = "#7c9499";
+  }
+}
+document
+  .querySelector(".trash-svg")
+  .addEventListener("mouseout", changeTrashColorOut);
+function changeTrashColorOut() {
+  let trashHover = document.querySelectorAll(".trash-hover");
+  for (let i = 0; i < trashHover.length; i++) {
+    trashHover[i].style.fill = "#CCD0D2";
+  }
 }

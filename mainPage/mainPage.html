@@ -15,21 +15,13 @@
 </head>
 
 <body>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+    </style>
     <div id="header">
         <div class="logo">
             <button class="menu">
-                <?xml version="1.0" ?><svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
-                    <rect fill="none" height="256" width="256" />
-                    <circle cx="60" cy="60" r="12" />
-                    <circle cx="128" cy="60" r="12" />
-                    <circle cx="196" cy="60" r="12" />
-                    <circle cx="60" cy="128" r="12" />
-                    <circle cx="128" cy="128" r="12" />
-                    <circle cx="196" cy="128" r="12" />
-                    <circle cx="60" cy="196" r="12" />
-                    <circle cx="128" cy="196" r="12" />
-                    <circle cx="196" cy="196" r="12" />
-                </svg>
+                <img src="./menu-svgrepo-com.svg">
             </button>
             <span>ToDo</span>
         </div>
@@ -41,8 +33,20 @@
             </div>
         </div>
         <div class="user">
-            <button>사용자</button>
+            <!-- <button class="userBtn"> -->
+            <svg class="user-svg" width="458" height="457" viewBox="0 0 458 457" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M229 0C102.583 0 0.5 102.397 0.5 228.5C0.5 354.748 102.771 457 229 457C355.229 457 457.5 354.265 457.5 228.5C457.5 102.1 355.027 0 229 0ZM346.586 363.081C314.015 391.624 272.709 407.218 229 407.218C185.299 407.218 144 391.629 111.432 363.097C107.026 359.238 105.035 353.306 106.209 347.568C117.46 292.613 152.464 249.273 197.021 235.014C173.77 221.25 157.812 192.972 157.812 160.298C157.812 114.109 189.684 77.5 229 77.5C268.316 77.5 300.188 114.109 300.188 160.298C300.188 192.968 284.235 221.241 260.991 235.007C305.547 249.263 340.552 292.602 351.807 347.552C352.98 353.282 350.985 359.226 346.586 363.081Z"
+                    fill="white" />
+            </svg>
+            <div class="user-name">김동현</div>
         </div>
+    </div>
+    <div class="side-menu side-menu-hidden">
+        <ul class="todo-list">
+            <li>할 일 목록1</li>
+        </ul>
     </div>
     <div class="list-input-container">
         <div class="list-input">
@@ -50,10 +54,31 @@
                 <input class="inputBox" type="text" name="list-input" placeholder="add your plan...">
                 <input type="submit" value="Add" class="addButton">
             </div>
+            <div class="input-info input-info-hidden">
+                <input type="date" class="date-input">
+            </div>
         </div>
     </div>
     <div class="list-container">
         <ul class="list">
+            <div class="trash-btn">
+                <svg class="trash-svg" width="73" height="79" viewBox="0 0 73 79" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path class="trash-hover"
+                        d="M10.2667 18.1926V68.2222C10.2667 70.7328 12.3109 72.7704 14.8297 72.7704H58.1776C60.6964 72.7704 62.7406 70.7328 62.7406 68.2222V18.1926H10.2667Z"
+                        fill="#CCD0D2" />
+                    <path class="trash-hover"
+                        d="M26.237 0H46.7703C49.2891 0 51.3333 2.03763 51.3333 4.54822V9.09643H46.7703V6.82233C46.7703 5.56716 45.7504 4.54822 44.4888 4.54822H28.5185C27.2569 4.54822 26.237 5.5669 26.237 6.82233V9.09643H21.674V4.54822C21.674 2.03763 23.7182 0 26.237 0Z"
+                        fill="#CCD0D2" />
+                    <path
+                        d="M19.3925 62.5368C19.3925 64.4219 20.9257 65.9478 22.8146 65.9478C24.7037 65.9478 26.2367 64.4219 26.2367 62.5368V29.4925H19.3925V62.5368ZM46.7703 29.4925V62.5371C46.7703 64.4201 48.3036 65.9481 50.1925 65.9481C52.0816 65.9481 53.6146 64.4198 53.6146 62.5371V29.4925H46.7703ZM33.0813 62.5368C33.0813 64.4198 34.6145 65.9478 36.5034 65.9478C38.3925 65.9478 39.9255 64.4196 39.9255 62.5368V29.4925H33.081L33.0813 62.5368Z"
+                        fill="#AEB1B3" />
+                    <path d="M10.2667 20.4667H62.7406V25.0149H10.2667V20.4667Z" fill="#AEB1B3" />
+                    <path class="trash-hover"
+                        d="M10.2667 9.09616H62.7406C65.2594 9.09616 67.3037 11.1338 67.3037 13.6444V20.4667H5.70364V13.6444C5.70364 11.1338 7.7479 9.09616 10.2667 9.09616Z"
+                        fill="#CCD0D2" />
+                </svg>
+            </div>
             <div class="list-wrapper">
                 <li class="list-item">1. ToDo</li>
                 <button class="complete-check">✅</button>
