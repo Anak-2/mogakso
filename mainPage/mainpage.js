@@ -157,3 +157,25 @@ function changeTrashColorOut() {
     trashHover[i].style.fill = "#CCD0D2";
   }
 }
+
+// make clock fucntion
+const clock = document.querySelector(".current-time");
+
+function getClock() {
+  const date = new Date();
+  let year = date.getFullYear(); // 년도
+  let month = date.getMonth() + 1; // 월
+  let day = date.getDate(); // 날짜
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  const seconds = String(date.getSeconds()).padStart(2, "0");
+  const showTime = `${month}월 ${day}일 ${hours}:${minutes}`;
+  clock.innerText = showTime;
+  let monthZero = String(month).padStart(2, 0);
+  let dayZero = String(day).padStart(2, 0);
+  const inputDate = document.querySelector(".date-input");
+  inputDate.value = `${year}-${monthZero}-${dayZero}`;
+}
+
+getClock();
+setInterval(getClock, 60000);
