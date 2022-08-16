@@ -12,13 +12,30 @@ searchBox.addEventListener("keyup", function (e) {
   }
 });
 
+function initInput() {
+  const inputDate = document.querySelector(".date-input");
+  const inputTime = document.querySelector(".time-input");
+  //init input values and date input
+  inputBox.value = "";
+  inputDate.value = inputDate.min;
+  // init time input
+  const date = new Date();
+  const hours = String(date.getHours()).padStart(2, "0");
+  const minutes = String(date.getMinutes()).padStart(2, "0");
+  inputTime.value = `${hours}:${minutes}`;
+}
+
 //delete one list
 function deleteList(e) {
   let s = e.target.parentElement;
+  let outerList = s.parentElement;
   let t1 = new TimelineMax({
     //remove를 애니메이션 다 끝난 후 호출하기 위한 방법
     onComplete: function () {
       s.remove();
+      if (outerList.children.length == 1) {
+        outerList.remove();
+      }
     },
   });
   t1.to(s, { duration: 0.5, opacity: 0, y: -50, ease: "line" });
@@ -97,7 +114,10 @@ function addList(e) {
     if (dateItem.length == 0) {
       const outerList = document.createElement("div");
       outerList.classList.add("outer-list");
-      outerList.appendChild(dateItem);
+      const newDate = document.createElement("div");
+      newDate.classList.add("date-item");
+      newDate.innerText = inputDate.value;
+      outerList.appendChild(newDate);
       outerList.appendChild(listWrapper);
       list.appendChild(outerList);
     } else {
@@ -114,14 +134,7 @@ function addList(e) {
     outerListArr[outerListIndex].children[
       listWrapperIndex
     ].insertAdjacentElement("afterend", listWrapper);
-    //init input values and date input
-    inputBox.value = "";
-    inputDate.value = inputDate.min;
-    // init time input
-    const date = new Date();
-    const hours = String(date.getHours()).padStart(2, "0");
-    const minutes = String(date.getMinutes()).padStart(2, "0");
-    inputTime.value = `${hours}:${minutes}`;
+    initInput();
   }
 }
 
@@ -295,5 +308,6 @@ function getClock() {
   inputDate.min = `${year}-${monthZero}-${dayZero}`;
 }
 
+initInput();
 getClock();
 setInterval(getClock, 60000);
