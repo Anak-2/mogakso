@@ -176,11 +176,12 @@ button {
 .list-input-container .list-input .input-info {
     position: absolute;
     /* z-index: 1; */
-    width: 87.5%;
+    width: calc(100% - 40px);
     background-color: rgb(233, 228, 228);
     overflow: hidden;
     /* height: 30px; */
     transition: all 0.5s ease;
+    display: flex;
 }
 
 .input-info-hidden {
@@ -194,7 +195,12 @@ button {
     /* display: block; */
 }
 
+/* when delete this comment mark, animation looks different  */
 .date-input {
+    height: 30px;
+}
+
+.time-input {
     height: 30px;
 }
 
@@ -229,6 +235,13 @@ button {
     font-size: 1rem;
 }
 
+.outer-list .date-item {
+    font-weight: 600;
+    margin-left: 20px;
+    padding: 5px 0px;
+    color: rgb(70, 86, 99);
+}
+
 .list-container .list-wrapper {
     display: flex;
     align-content: center;
@@ -243,6 +256,12 @@ button {
     display: inline-block;
     height: 1.7rem;
     padding-left: 2%;
+}
+
+.list-item .deadline {
+    float: right;
+    margin-right: 10px;
+    color: gray;
 }
 
 .list-container .list .delete-btn,
