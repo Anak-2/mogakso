@@ -18,5 +18,5 @@ You can create a plan with selecting the date and time, and it is automatically 
 ## Check & Delete
 <img width="629" alt="check delete" src="https://user-images.githubusercontent.com/83941092/226566368-da265348-02d3-499d-a544-bbb7d05f1560.png">
 
-You can check what to do by clicking the ✅ mark
-Also you can delete your todo by clicking the ❌ button
+You can check what to do by clicking the ✅ mark <br>
+and Also you can delete your todo by clicking the ❌ button
